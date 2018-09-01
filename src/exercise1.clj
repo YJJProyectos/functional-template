@@ -5,6 +5,8 @@
   [x]
   (- 10 (* 2 x)))
 
+(ten-minus-by-two 3)
+
 
 
 
