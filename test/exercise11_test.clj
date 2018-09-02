@@ -7,7 +7,7 @@
 (deftest fmap-nil-for-nil-value
     (is (= (fmap-nil test-map :a) true)))
 
-(deftest fmap-nil-for-non-nil-value
+(deftest fmap-nil-for-non-nil-value-map
     (is (= (fmap-nil test-map :b) false)))
 
 (deftest fmap-nil-for-non-nil-value
