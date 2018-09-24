@@ -1,18 +1,9 @@
 (ns exercise9)
-(defn things
-  [x]
-  (if  (string? x)
-    "Soy un String"
-    ( if (vector? x)
-      "Soy un Vector"
-      ( if ( map? x)
-        "Soy un Map"
-        ( if (list? x )
-          "Soy un List"
-          "Soy un default"
-          )
-        )
-      )
-    )
 
-  )
+(defmulti things type)
+
+(defmethod things java.lang.String [x] "Soy un String" )
+(defmethod things clojure.lang.PersistentArrayMap [x] "Soy un Map" )
+(defmethod things clojure.lang.PersistentList [x] "Soy un List" )
+(defmethod things clojure.lang.PersistentVector [x] "Soy un Vector" )
+(defmethod things :default [x] "Soy un default" )
